@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "karma test",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "mocha_test":"mocha test/serverSpec.js"
   },
   "author": "RBK",
   "license": "ISC",

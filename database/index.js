@@ -18,10 +18,20 @@ let catSchema = mongoose.Schema({
 });
 
 let Cat = mongoose.model('Cat', catSchema);
-
-let save = (data,callback) => {
-  // TODO: Your code here
-  
+//save function for data from user input 
+let save = (req,res) => {
+  let cat= new Cat({
+  	catName:req.body.catName,
+  	ownerEmail:req.body.ownerEmail,
+  	imageUrl:req.body.imageUrl,
+  	adoptionMessage:req.body.adoptionMessage
+  })
+  cat.save(function(err){
+  	if(err){
+  		return handleError(err)
+  	}
+  })
+  res.json(cat)
   
 }
 
